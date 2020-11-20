@@ -2,8 +2,8 @@
 comment0.target=E4
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
-comment2.params=
-comment2.target=void\ desenhaMapa()
+comment2.params=lug
+comment2.target=void\ desenhaMapa(int[][])
 comment3.params=lug\ userI\ userC
 comment3.target=void\ arrayOcupacao(int[][],\ int,\ int)
 comment4.params=texto

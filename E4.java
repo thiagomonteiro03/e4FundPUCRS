@@ -11,43 +11,69 @@ public class E4
         int opcao;
         int[][] lugares = {
          // A  B  C  D  E  F    // MATRIZ 6x24
-          { 0, 0, 0, 0, 0, 0},  // Linha 0
-          { 0, 0, 0, 0, 0, 0},  // Linha 1
-          { 0, 0, 0, 0, 0, 0},  // Linha 2
-          { 0, 0, 0, 0, 0, 0},  // Linha 3
-          { 0, 0, 0, 0, 0, 0},  // Linha 4
-          { 0, 0, 0, 0, 0, 0},  // Linha 5
-          { 0, 0, 0, 0, 0, 0},  // Linha 6
-          { 0, 0, 0, 0, 0, 0},  // Linha 7
-          { 0, 0, 0, 0, 0, 0},  // Linha 8
-          { 0, 0, 0, 0, 0, 0},  // Linha 9
-          { 0, 0, 0, 0, 0, 0},  // Linha 10
-          { 0, 0, 0, 0, 0, 0},  // Linha 11
-          { 0, 0, 0, 0, 0, 0},  // Linha 12
-          { 0, 0, 0, 0, 0, 0},  // Linha 13
-          { 0, 0, 0, 0, 0, 0},  // Linha 14
-          { 0, 0, 0, 0, 0, 0},  // Linha 15
-          { 0, 0, 0, 0, 0, 0},  // Linha 16
-          { 0, 0, 0, 0, 0, 0},  // Linha 17
-          { 0, 0, 0, 0, 0, 0},  // Linha 18
-          { 0, 0, 0, 0, 0, 0},  // Linha 19
-          { 0, 0, 0, 0, 0, 0},  // Linha 20
-          { 0, 0, 0, 0, 0, 0},  // Linha 21
-          { 0, 0, 0, 0, 0, 0},  // Linha 22
-          { 0, 0, 0, 0, 0, 0},  // Linha 23
+          { 2, 2, 2, 2, 2, 2},  // Linha 0
+          { 1, 1, 1, 1, 1, 1},  // Linha 1
+          { 1, 1, 1, 1, 1, 1},  // Linha 2
+          { 1, 1, 1, 1, 1, 1},  // Linha 3
+          { 1, 1, 1, 1, 1, 1},  // Linha 4
+          { 1, 1, 1, 1, 1, 1},  // Linha 5
+          { 0, 1, 1, 1, 1, 0},  // Linha 6
+          { 1, 1, 1, 1, 1, 1},  // Linha 7
+          { 1, 1, 1, 1, 1, 1},  // Linha 8
+          { 2, 2, 2, 2, 2, 2},  // Linha 9
+          { 3, 3, 3, 3, 3, 3},  // Linha 10
+          { 1, 1, 1, 1, 1, 1},  // Linha 11
+          { 1, 1, 1, 1, 1, 1},  // Linha 12
+          { 1, 1, 1, 1, 1, 1},  // Linha 13
+          { 1, 1, 1, 1, 1, 1},  // Linha 14
+          { 1, 1, 1, 1, 1, 1},  // Linha 15
+          { 1, 1, 1, 1, 1, 1},  // Linha 16
+          { 1, 1, 1, 1, 1, 1},  // Linha 17
+          { 1, 1, 1, 1, 1, 1},  // Linha 18
+          { 1, 1, 1, 1, 1, 1},  // Linha 19
+          { 1, 1, 1, 1, 1, 1},  // Linha 20
+          { 1, 1, 1, 1, 1, 1},  // Linha 21
+          { 1, 1, 2, 2, 1, 1},  // Linha 22
+          { 0, 0, 0, 0, 0, 0}   // Linha 23
         };
         while(menuOn){
-            desenhaMapa();
+            desenhaMapa(lugares);
             
             System.out.println("Digite um número para opção desejada: ");
             opcao = in.nextInt();
+            menuOn = false;
         }
         
     }
     
-    private static void desenhaMapa(){
-            System.out.println("================================= Menu =================================");
-            System.out.println("         -----------------------------------------------------          ");
+    private static void desenhaMapa(int [] [] lug){
+            System.out.println("======================== Menu ========================");
+            System.out.println("-----------------------------------------------------");
+            for (int l=0; l<lug.length; l++) {
+            for (int c=0; c<lug[l].length; c++) {
+                if(lug[l][c] >3){
+                System.out.printf(" |    | ");}
+                else{
+                    String letra = "";
+                    switch(c){
+                        case 0: letra = "A";
+                        break;
+                        case 1: letra = "B";
+                        break;
+                        case 2: letra = "C";
+                        break;
+                        case 3: letra = "D";
+                        break;
+                        case 4: letra = "E";
+                        break;
+                        case 5: letra = "F";
+                        break;
+                    }
+                System.out.printf(" | " + letra + "%d | ", l);
+            }
+            }
+            System.out.println("\n -----------------------------------------");
+        }
             for(int i=0;i<24;i++){
             System.out.println("         |  A1  |  B1  |  C1  |          |  D1  |  E1  |  F1 |          ");
             System.out.println("         ----------------------          ---------------------          ");
