@@ -8,7 +8,7 @@ public class E4
     {
         Scanner in = new Scanner(System.in);
         Boolean menuOn = true;
-        int opcao;
+        String opcao;
         int[][] lugares = {
          // A  B  C  D  E  F    // MATRIZ 6x24
           { 2, 2, 2, 2, 2, 2},  // Linha 0
@@ -39,8 +39,8 @@ public class E4
         while(menuOn){
             desenhaMapa(lugares);
             
-            System.out.println("Digite um número para opção desejada: ");
-            opcao = in.nextInt();
+            System.out.println("Digite separadamente a coluna e a linha do seu assento: ");
+            opcao = in.nextLine();
             menuOn = false;
         }
         
@@ -55,6 +55,7 @@ public class E4
                 System.out.printf(" |    | ");}
                 else{
                     String letra = "";
+                    int n = l+1;
                     switch(c){
                         case 0: letra = "A";
                         break;
@@ -69,15 +70,11 @@ public class E4
                         case 5: letra = "F";
                         break;
                     }
-                System.out.printf(" | " + letra + "%d | ", l);
+                System.out.printf(" | " + letra + "%d | ", n);
             }
             }
-            System.out.println("\n -----------------------------------------");
-        }
-            for(int i=0;i<24;i++){
-            System.out.println("         |  A1  |  B1  |  C1  |          |  D1  |  E1  |  F1 |          ");
-            System.out.println("         ----------------------          ---------------------          ");
-        }       
+            System.out.println("\n ");
+        } 
            }
     
     private static void arrayOcupacao(int [] [] lug, int userI, int userC){ 
